@@ -1,5 +1,5 @@
-import { getPublicClient } from "@/lib/supabase";
-import { formatDate, severityColor } from "@/lib/utils";
+import { getPublicClient } from "../lib/supabase";
+import { formatDate, severityColor } from "../lib/utils";
 export const revalidate = 300;
 const CATS = ["cve","malware","breach","apt","advisory","research","tool","legislation","general"];
 const PER_PAGE = 12;
