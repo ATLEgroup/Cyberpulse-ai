@@ -1,0 +1,17 @@
+export default function NotFound() {
+  return (
+    <>
+      <header className="hdr">
+        <div className="inner">
+          <a href="/" className="logo">CYBER<span>PULSE</span> AI</a>
+        </div>
+      </header>
+      <div className="wrap">
+        <div className="empty">
+          <h2>404 — Page not found</h2>
+          <a href="/" className="pbtn" style={{ display: "inline-block", marginTop: "1rem" }}>&#8592; Home</a>
+        </div>
+      </div>
+    </>
+  );
+}
