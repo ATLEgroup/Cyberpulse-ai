@@ -1,6 +1,6 @@
-import { getServiceClient } from "../../../lib/supabase";
-import { generateArticle } from "../../../lib/generate";
-import { makeSlug } from "../../../lib/utils";
+import { getServiceClient } from "./lib/supabase";
+import { generateArticle } from "./lib/generate";
+import { makeSlug } from "./lib/utils";
 export const dynamic = "force-dynamic";
 export const maxDuration = 30;
 const MAX_PER_RUN = 2;

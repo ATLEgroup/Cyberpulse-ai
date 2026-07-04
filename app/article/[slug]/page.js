@@ -1,6 +1,6 @@
-import { getPublicClient, getServiceClient } from "../../lib/supabase";
-import { formatDate, severityColor } from "../../lib/utils";
-import { mdToHtml } from "../../lib/markdown";
+import { getPublicClient, getServiceClient } from "../lib/supabase";
+import { formatDate, severityColor } from "../lib/utils";
+import { mdToHtml } from "../lib/markdown";
 import { notFound } from "next/navigation";
 export const revalidate = 0;
 function SeverityBadge({ severity }) {
