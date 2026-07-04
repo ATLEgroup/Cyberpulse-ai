@@ -58,7 +58,7 @@ export default async function ArticlePage({ params: paramsPromise }) {
           </div>
         )}
       </div>
-      <footer className="ftr">CyberPulse AI — AI-generated cybersecurity intelligence. Always verify with primary sources.</footer>
+      <footer className="ftr">CyberPulse AI — Always verify with primary sources.</footer>
     </>
   );
 }
