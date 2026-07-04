@@ -1,6 +1,6 @@
-import { getServiceClient } from "../../lib/supabase";
-import { SOURCES, fetchFeed } from "../../lib/feeds";
-import { hashContent } from "../../lib/utils";
+import { getServiceClient } from "../../../lib/supabase";
+import { SOURCES, fetchFeed } from "../../../lib/feeds";
+import { hashContent } from "../../../lib/utils";
 export const dynamic = "force-dynamic";
 export const maxDuration = 30;
 function isAuthorized(req) {
