@@ -19,10 +19,7 @@ export async function GET(req) {
     for (const item of items) {
       if (!item.title || !item.link) continue;
       const content_hash = hashContent(item.title, item.link);
-      const { error: insertError } = await supabase.from("raw_sources").insert({
-        source_name: source.name, source_url: item.link, title: item.title.slice(0, 500),
-        raw_content: item.content, content_hash, published_at: item.published || null,
-      });
+      const { error: insertError } = await supabase.from("raw_sources").insert({ source_name: source.name, source_url: item.link, title: item.title.slice(0, 500), raw_content: item.content, content_hash, published_at: item.published || null });
       if (insertError) {
         if (insertError.code === "23505") results.duplicates++;
         else results.errors.push(`${source.name}: ${insertError.message}`);

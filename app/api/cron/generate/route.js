@@ -35,11 +35,7 @@ export async function GET(req) {
     try {
       const articleData = await generateArticle(apiKey, source);
       const slug = await uniqueSlug(supabase, articleData.title);
-      const { error: insertError } = await supabase.from("articles").insert({
-        slug, title: articleData.title, summary: articleData.summary, content: articleData.content,
-        tags: articleData.tags || [], source_urls: [source.source_url],
-        category: articleData.category || "general", severity: articleData.severity || null, cve_ids: articleData.cve_ids || [],
-      });
+      const { error: insertError } = await supabase.from("articles").insert({ slug, title: articleData.title, summary: articleData.summary, content: articleData.content, tags: articleData.tags || [], source_urls: [source.source_url], category: articleData.category || "general", severity: articleData.severity || null, cve_ids: articleData.cve_ids || [] });
       if (insertError) throw new Error(insertError.message);
       await supabase.from("raw_sources").update({ processed: 1 }).eq("id", source.id);
       generated++;
